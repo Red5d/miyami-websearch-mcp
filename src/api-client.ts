@@ -6,8 +6,11 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import type { SearchResponse, FetchResponse, SearchAndFetchResponse, ApiError } from './types.js';
 
-// Hardcoded API URL - this is a free service, no configuration needed
-const API_BASE_URL = 'https://miyami-websearch-tool.onrender.com';
+// Default API URL - this is a free service, no configuration needed
+// To override at runtime, set the API_BASE_URL environment variable.
+const DEFAULT_API_BASE_URL = 'https://miyami-websearch-tool.onrender.com';
+
+export const API_BASE_URL: string = process.env.API_BASE_URL ?? DEFAULT_API_BASE_URL;
 
 export class ApiClient {
   private client: AxiosInstance;
