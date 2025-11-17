@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "tsc && chmod +x dist/index.js",
+    "prepare": "npm run build",
     "dev": "tsx src/index.ts",
     "watch": "tsx watch src/index.ts",
     "prepublishOnly": "npm run build",
